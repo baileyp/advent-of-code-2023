@@ -46,7 +46,8 @@ that was my first prompt:
 > I'm starting a brand new Ruby project without Rails. This will be a simple CLI-driven application. Can you help me get
 > bootstrapped?
 
-It happily gave me the code in commit 0ab5cd75666e4cdc2231aa8c7adc325e613d00f0. I didn't know how to run the tests so I had to ask that as well
+It happily gave me the code in commit [0ab5cd7](https://github.com/baileyp/advent-of-code-2023/commit/0ab5cd7). I didn't
+know how to run the tests so I had to ask that as well
 
 > How do I run the tests?
 
@@ -99,7 +100,8 @@ First prompt to get me started
 > My CLI app needs to read two command line arguments. The first will be an integer in the range from 1 to 25 and will
 > be the `day` argument, and the second will be an integer in the range from 1 to 2 and will be the `part` argument.
 
-The result of this is visible in commit `ef19a53` but the response also suggested follow-ups
+The result of this is visible in commit [ef19a53](https://github.com/baileyp/advent-of-code-2023/commit/ef19a53) but the
+response also suggested follow-ups:
 
 > Next steps could include:
 >
@@ -146,7 +148,7 @@ end
 ```
 
 Now the tests pass. I'm accustomed to unit tests being side-effect free so this was a little annoying but manageable.
-Anyway, results are in commit `4e7dbf3`.
+Anyway, results are in commit [4e7dbf3](https://github.com/baileyp/advent-of-code-2023/commit/4e7dbf3).
 
 My final prompt was to put the printing of the output responsibility back onto the runner, and the handler for each
 day/part will just return.
@@ -154,7 +156,8 @@ day/part will just return.
 > I'd like `MyCli.run` to take the return value of `day_class.send` and print it, which also means `Day01.part` needs to
 > return a value instead of printing it.
 
-Very simple tweak which I could have probably done on my own but the results are in commit `bcf5bce`.
+Very simple tweak which I could have probably done on my own but the results are in commit
+[bcf5bce](https://github.com/baileyp/advent-of-code-2023/commit/bcf5bce).
 
 Now I'm all set and ready for the first puzzle to drop, and I *still* haven't written any ruby myself. Bizarre.
 
