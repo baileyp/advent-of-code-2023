@@ -46,7 +46,7 @@ that was my first prompt:
 > I'm starting a brand new Ruby project without Rails. This will be a simple CLI-driven application. Can you help me get
 > bootstrapped?
 
-It happily gave me the code in commit `0ab5cd7`. I didn't know how to run the tests so I had to ask that as well
+It happily gave me the code in commit 0ab5cd75666e4cdc2231aa8c7adc325e613d00f0. I didn't know how to run the tests so I had to ask that as well
 
 > How do I run the tests?
 
