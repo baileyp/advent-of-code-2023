@@ -2,6 +2,6 @@
 
 class Day01
   def self.part1(input)
-    puts input
+    input
   end
 end

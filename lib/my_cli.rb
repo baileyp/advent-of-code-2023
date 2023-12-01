@@ -6,6 +6,8 @@ class MyCli
     input = File.read(filename)
 
     day_class = Object.const_get("Day#{day.to_s.rjust(2, '0')}")
-    day_class.send("part#{part}", input)
+    result = day_class.send("part#{part}", input)
+
+    puts result
   end
 end
