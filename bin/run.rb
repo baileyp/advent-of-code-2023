@@ -1,6 +1,7 @@
 # bin/run.rb
 
 require_relative '../lib/my_cli'
+require_relative '../lib/day01'
 
 day = ARGV[0].to_i
 part = ARGV[1].to_i

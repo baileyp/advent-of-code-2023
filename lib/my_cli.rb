@@ -2,7 +2,10 @@
 
 class MyCli
   def self.run(day, part)
-    puts "Running puzzle for day #{day}, part #{part}"
-    # Add your puzzle solving logic here
+    filename = format("input/day%02d.txt", day)
+    input = File.read(filename)
+
+    day_class = Object.const_get("Day#{day.to_s.rjust(2, '0')}")
+    day_class.send("part#{part}", input)
   end
 end
