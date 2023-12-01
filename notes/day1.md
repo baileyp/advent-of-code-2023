@@ -143,3 +143,38 @@ Anyway, ran it properly and the solution was correct! ⭐
 Now, is this the *best* solution? Not likely. I could have prompted it for guidance on how to walk the string from the
 left and right sides and that would be cool to see, but I also wanted to know how sophisticated the results would be.
 Perhaps later I'll do some re-prompting to see if any of these can be improved as refactors.
+
+## Part 2
+
+Alright, we're getting some momentum now. Wrote my TDD style test first and then moved on to prompting CP:
+
+> How can I replace all occurences of a substring within a string?
+
+It instructed me to use `str.gsub` so I started `def number_names_to_digits` and CP did the rest.
+
+But... it doesn't work. That's because the sample data shows that some of the letters across number names are re-used -
+`eightwothree` is supposed to resolve as `83` but my naive code turns this into `eigh23`. This is going to require a
+different approach.
+
+> Can I use integers as keys in a data collection of some type?
+
+Ok, so now I know hashes exist.
+
+> In such a hash, can I select the value stored in the lowest-number key?
+
+Which, amongst some explanation, yielded this code
+
+```ruby
+hash = {3 => "three", 1 => "one", 2 => "two"}
+
+lowest_key_value = hash[hash.keys.min]
+```
+
+Cool, now I know a decent amount of the syntax for hashes and that they have properties like `keys` which also look to
+be array-like and have their own methods like `min` and I presume `max`.
+
+With a bit more fudging by writing a function name and using a naive implementation of `map` it told me about
+`filter_map` and I see now how to use that to eliminate values I don't want and that I can convert a 2d array into a
+hash with `to_h`.
+
+Updated the tests, ran the solution, and ⭐ :)
