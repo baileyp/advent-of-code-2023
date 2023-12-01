@@ -29,7 +29,7 @@ Also, I figured I'd try TDD so I did this next:
 >
 > Then the expected return is `142`
 
-The result is in commit `37bfb1a`.
+The result is in commit [37bfb1a](https://github.com/baileyp/advent-of-code-2023/commit/37bfb1a).
 
 In the same response, it also suggested some naive code which clearly won't work, but teaches me a bit about how ruby
 works:
