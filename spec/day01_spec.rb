@@ -14,5 +14,14 @@ describe Day01 do
 
       expect(Day01.part1(input)).to eq(142)
     end
+
+    it "only selects single digits at a time" do
+      input = <<~INPUT
+        ab12cd
+        wx45yz
+      INPUT
+
+      expect(Day01.part1(input)).to eq(57)
+    end
   end
 end

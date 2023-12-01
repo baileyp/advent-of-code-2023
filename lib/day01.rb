@@ -2,6 +2,11 @@
 
 class Day01
   def self.part1(input)
-    input
+    input.each_line.map{ |line| combine_integers(line.chomp)}.sum
   end
+end
+
+def combine_integers(str)
+  numbers = str.scan(/\d/).map(&:to_i)
+  "#{numbers[0]}#{numbers[numbers.size - 1]}".to_i
 end
