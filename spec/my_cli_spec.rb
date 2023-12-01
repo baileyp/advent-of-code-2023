@@ -4,8 +4,8 @@ require_relative '../lib/my_cli'
 
 describe MyCli do
   describe ".run" do
-    it "prints a greeting" do
-      expect { MyCli.run }.to output("Hello, world!\n").to_stdout
+    it "runs puzzle for specific day and part" do
+      expect { MyCli.run(3, 2) }.to output("Running puzzle for day 3, part 2\n").to_stdout
     end
   end
 end
