@@ -157,3 +157,8 @@ day/part will just return.
 Very simple tweak which I could have probably done on my own but the results are in commit `bcf5bce`.
 
 Now I'm all set and ready for the first puzzle to drop, and I *still* haven't written any ruby myself. Bizarre.
+
+---
+## Day by Day Notes
+
+- [Day 1](./notes/day1.md)
