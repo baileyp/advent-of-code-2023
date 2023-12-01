@@ -24,4 +24,18 @@ describe Day01 do
       expect(Day01.part1(input)).to eq(57)
     end
   end
+
+  describe ".combine_integers" do
+    it "combines the first and last integers in the string" do
+      expect(Day01.combine_integers("1abc2")).to eq(12)
+    end
+
+    it "combines the first and last integers in the string containing multiple integers" do
+      expect(Day01.combine_integers("ab12cd")).to eq(12)
+    end
+
+    it "combines the first and last integers in the string containing no integers" do
+      expect(Day01.combine_integers("abcdef")).to eq(0)
+    end
+  end
 end
