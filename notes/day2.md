@@ -31,7 +31,7 @@ Anyway, I wrote the whole test and then my next prompt:
 
 > Can you write a function that satisifies these tests?
 
-It spit out some code, I blindly copy-pasted it into my `Day02` class and re-ran the tests and wouldn't your know, they
+It spit out some code, I blindly copy-pasted it into my `Day02` class and re-ran the tests and wouldn't you know, they
 passed.
 
 Of course there was something in the code I didn't understand which was `to_sym` so another `/explain` prompt later and
@@ -56,7 +56,7 @@ something I'd prefer to avoid so I highlighted that code and prompted CP:
 
 ## Part 2
 
-Oh, so this is interesting. I considered in day one making my game hashes look liks this
+Oh, so this is interesting. I considered in day one making my game hashes look liks this:
 
 ```ruby
 {
@@ -79,7 +79,7 @@ Instead of the more literal mapping that I actually did, which looks like this:
 ```
 
 The puzzle for part two would make this structure much easier to work with, so the first thing I'm going to do is
-attempt to use CP to do a refactor of part 1 based on the new has structure.
+attempt to use CP to do a refactor of part 1 based on the new hash structure.
 
 > I'd like to refactor this function so that when given the `input`
 >
@@ -92,7 +92,8 @@ attempt to use CP to do a refactor of part 1 based on the new has structure.
 >   sets: { "blue" => [3, 20], "red" => [4, 1], "green" => [2, 2] }
 > }
 
-When I accepted the code suggestion and updated the test, it worked! Now I need the rest of the solution updated.
+When I accepted the code suggestion and updated the test, it worked! Now I need the rest of the solution updated. I
+highlighted `is_game_possible` and prompted:
 
 > Based on the successful refactor to `self.parse_input` this function now needs to be updated based on the new
 structure of the `game` hash
@@ -113,7 +114,7 @@ The "bug" is on line 3 - I don't need the `sum` of the counts, I need the `max`.
 this but I see the solution myself so I'll fix it. Point is - while so far CP is proving to be quite capable, there are
 limits to its "intuition" and is not perfect.
 
-Also, updating the tests was a breeze since, once again, CP let me tab-complete the `expected_output`values with
+Also, updating the tests was a breeze since, once again, CP let me tab-complete the `expected_output` values with
 absolutely no effort. Results of this refactor in commit [131aa35](https://github.com/baileyp/advent-of-code-2023/commit/131aa35).
 
 From here the rest was simple. I wrote `min_colors_needed` with my own brain and prompted for test updates, which not
