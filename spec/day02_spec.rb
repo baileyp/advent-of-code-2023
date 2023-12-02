@@ -13,37 +13,37 @@ describe Day02 do
 
       expect(Day02.part1(input)).to eq(8)
     end
+  end
 
-    describe ".parse_input" do
-      it "parses the input correctly" do
-        input1 = "Game 11: 3 blue, 4 red; 1 red, 2 green, 20 blue; 2 green"
-        expected_output1 = {
-          game_id: 11,
-          sets: { "blue" => [3, 20], "red" => [4, 1], "green" => [2, 2] }
-        }
-        input2 = "Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red"
-        expected_output2 = {
-          game_id: 3,
-          sets: { "blue" => [6, 5], "red" => [20, 4, 1], "green" => [8, 13, 5] }
-        }
-        expect(Day02.parse_input(input1)).to eq(expected_output1)
-      end
+  describe ".parse_input" do
+    it "parses the input correctly" do
+      input1 = "Game 11: 3 blue, 4 red; 1 red, 2 green, 20 blue; 2 green"
+      expected_output1 = {
+        game_id: 11,
+        sets: { "blue" => [3, 20], "red" => [4, 1], "green" => [2, 2] }
+      }
+      input2 = "Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red"
+      expected_output2 = {
+        game_id: 3,
+        sets: { "blue" => [6, 5], "red" => [20, 4, 1], "green" => [8, 13, 5] }
+      }
+      expect(Day02.parse_input(input1)).to eq(expected_output1)
     end
+  end
 
-    describe ".is_game_possible" do
-      it "correctly determines if a game is possible for a given bag" do
-        game1 = {
-          game_id: 1,
-          sets: { "blue" => [3, 6], "red" => [4, 1], "green" => [2] }
-        }
-        game3 = {
-          game_id: 3,
-          sets: { "blue" => [6, 5], "red" => [20, 4, 1], "green" => [8, 13, 5] }
-        }
-        bag = { red: 12, green: 13, blue: 14 }
-        expect(Day02.is_game_possible(game1, bag)).to eq(true)
-        expect(Day02.is_game_possible(game3, bag)).to eq(false)
-      end
+  describe ".is_game_possible" do
+    it "correctly determines if a game is possible for a given bag" do
+      game1 = {
+        game_id: 1,
+        sets: { "blue" => [3, 6], "red" => [4, 1], "green" => [2] }
+      }
+      game3 = {
+        game_id: 3,
+        sets: { "blue" => [6, 5], "red" => [20, 4, 1], "green" => [8, 13, 5] }
+      }
+      bag = { red: 12, green: 13, blue: 14 }
+      expect(Day02.is_game_possible(game1, bag)).to eq(true)
+      expect(Day02.is_game_possible(game3, bag)).to eq(false)
     end
   end
 end
