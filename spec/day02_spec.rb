@@ -28,5 +28,29 @@ describe Day02 do
         expect(Day02.parse_input(input)).to eq(expected_output)
       end
     end
+
+    describe ".is_game_possible" do
+      it "correctly determines if a game is possible for a given bag" do
+        game1 = {
+          game_id: 1,
+          sets: [
+            { "blue" => 3, "red" => 4 },
+            { "red" => 1, "green" => 2, "blue" => 6 },
+            { "green" => 2 }
+          ]
+        }
+        game3 = {
+          game_id: 3,
+          sets: [
+            { "green" => 8, "blue" => 6, "red" => 20 },
+            { "blue" => 5, "red" => 4, "green" => 13 },
+            { "green" => 5, "red" => 1 }
+          ]
+        }
+        bag = { red: 12, green: 13, blue: 14 }
+        expect(Day02.is_game_possible(game1, bag)).to eq(true)
+        expect(Day02.is_game_possible(game3, bag)).to eq(false)
+      end
+    end
   end
 end

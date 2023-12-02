@@ -20,4 +20,13 @@ class Day02
     end
     return { game_id: game_id, sets: sets }
   end
+
+  def self.is_game_possible(game, bag)
+    game[:sets].each do |set|
+      set.each do |color, count|
+        return false if bag[color.to_sym].to_i < count
+      end
+    end
+    true
+  end
 end
