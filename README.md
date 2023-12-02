@@ -165,3 +165,4 @@ Now I'm all set and ready for the first puzzle to drop, and I *still* haven't wr
 ## Day by Day Notes
 
 - [Day 1](./notes/day1.md)
+- [Day 2](./notes/day2.md)

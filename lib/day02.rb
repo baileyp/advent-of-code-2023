@@ -6,7 +6,8 @@ class Day02
   end
 
   def self.part2(input)
-    nil
+    games = input.each_line.map{ |line| parse_input(line.chomp) }
+    games.map { |game| min_colors_needed(game).values.inject(:*) }.sum
   end
 
   def self.parse_input(input)
@@ -28,5 +29,9 @@ class Day02
       return false if bag[color.to_sym].to_i < total_needed
     end
     true
+  end
+
+  def self.min_colors_needed(game)
+    game[:sets].map { |color, counts| [color, counts.max] }.to_h
   end
 end
