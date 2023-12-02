@@ -1,7 +1,8 @@
 class Day02
   def self.part1(input)
+    bag = { red: 12, green: 13, blue: 14 }
     games = input.each_line.map{ |line| parse_input(line.chomp) }
-    nil
+    games.filter_map { |game| game[:game_id] if is_game_possible(game, bag) }.sum
   end
 
   def self.part2(input)
