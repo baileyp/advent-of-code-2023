@@ -16,16 +16,17 @@ describe Day02 do
 
     describe ".parse_input" do
       it "parses the input correctly" do
-        input = "Game 11: 3 blue, 4 red; 1 red, 2 green, 20 blue; 2 green"
-        expected_output = {
+        input1 = "Game 11: 3 blue, 4 red; 1 red, 2 green, 20 blue; 2 green"
+        expected_output1 = {
           game_id: 11,
-          sets: [
-            { "blue" => 3, "red" => 4 },
-            { "red" => 1, "green" => 2, "blue" => 20 },
-            { "green" => 2 }
-          ]
+          sets: { "blue" => [3, 20], "red" => [4, 1], "green" => [2, 2] }
         }
-        expect(Day02.parse_input(input)).to eq(expected_output)
+        input2 = "Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red"
+        expected_output2 = {
+          game_id: 3,
+          sets: { "blue" => [6, 5], "red" => [20, 4, 1], "green" => [8, 13, 5] }
+        }
+        expect(Day02.parse_input(input1)).to eq(expected_output1)
       end
     end
 
@@ -33,19 +34,11 @@ describe Day02 do
       it "correctly determines if a game is possible for a given bag" do
         game1 = {
           game_id: 1,
-          sets: [
-            { "blue" => 3, "red" => 4 },
-            { "red" => 1, "green" => 2, "blue" => 6 },
-            { "green" => 2 }
-          ]
+          sets: { "blue" => [3, 6], "red" => [4, 1], "green" => [2] }
         }
         game3 = {
           game_id: 3,
-          sets: [
-            { "green" => 8, "blue" => 6, "red" => 20 },
-            { "blue" => 5, "red" => 4, "green" => 13 },
-            { "green" => 5, "red" => 1 }
-          ]
+          sets: { "blue" => [6, 5], "red" => [20, 4, 1], "green" => [8, 13, 5] }
         }
         bag = { red: 12, green: 13, blue: 14 }
         expect(Day02.is_game_possible(game1, bag)).to eq(true)

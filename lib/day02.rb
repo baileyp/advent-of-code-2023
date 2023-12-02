@@ -12,21 +12,20 @@ class Day02
   def self.parse_input(input)
     game, rest = input.split(': ')
     game_id = game.scan(/\d+/).first.to_i
-    sets = rest.split('; ').map do |set|
-      plays = set.split(', ').map do |play|
+    sets = Hash.new { |h, k| h[k] = [] }
+    rest.split('; ').each do |set|
+      set.split(', ').each do |play|
         count, color = play.split(' ')
-        [color, count.to_i]
+        sets[color] << count.to_i
       end
-      plays.to_h
     end
     return { game_id: game_id, sets: sets }
   end
 
   def self.is_game_possible(game, bag)
-    game[:sets].each do |set|
-      set.each do |color, count|
-        return false if bag[color.to_sym].to_i < count
-      end
+    game[:sets].each do |color, counts|
+      total_needed = counts.max
+      return false if bag[color.to_sym].to_i < total_needed
     end
     true
   end
