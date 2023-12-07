@@ -27,44 +27,37 @@ class Day03
 
   def self.part2(input)
     grid = input.split("\n")
-    gear_location = []
-    gears = {}
-    (0..grid.length - 1).each do |row|
-      current_number = ""
-      is_adjacent = false
-      (0..grid[row].length - 1).each do |col|
-        cell = grid[row][col]
+    gears = Hash.new { |h, k| h[k] = [] }
+    current_number = ""
+    gear_location = nil
+
+    grid.each_with_index do |row, row_index|
+      row.chars.each_with_index do |cell, col_index|
         if @@digits.include?(cell)
           current_number += cell
-          neighbors = neighbors(row, col).each do |neighbor|
-            if grid[neighbor[0]]&.[](neighbor[1]) == '*'
-              gear_location = [neighbor[0], neighbor[1]]
-              is_adjacent = true
-            end
-          end
+          gear_location = find_gear_location(grid, row_index, col_index) if gear_location.nil?
         else
-          if is_adjacent
-            if gears[gear_location].nil?
-              gears[gear_location] = []
-            end
+          if gear_location
             gears[gear_location] << current_number.to_i
+            gear_location = nil
           end
-          gear_location = []
-          is_adjacent = false
           current_number = ""
         end
       end
-      if is_adjacent
-        if gears[gear_location].nil?
-          gears[gear_location] = []
-        end
+      if gear_location
         gears[gear_location] << current_number.to_i
+        gear_location = nil
       end
-      gear_location = []
-      is_adjacent = false
       current_number = ""
     end
-    gears.values.filter_map do |gear| gear.inject(:*) if gear.length == 2 end.sum
+
+    gears.values.filter_map { |gear| gear.inject(:*) if gear.length == 2 }.sum
+  end
+
+  def self.find_gear_location(grid, row, col)
+    neighbors(row, col).find do |neighbor|
+      grid[neighbor[0]]&.[](neighbor[1]) == '*'
+    end
   end
 
   def self.neighbors(row, col)
