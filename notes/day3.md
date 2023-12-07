@@ -20,3 +20,16 @@ This wasn't all that hard once I decided on a solution, which a prompt did help 
 
 Based on the response, the rest wasn't bad and I'm happy it worked, given that JavaScript has let me down here
 [in the past](https://github.com/baileyp/advent-of-code-2021#day-5-puzzle-solution).
+
+## Epilogue
+
+Ok, so I knew the code I wrote for part 2 looked pretty insane (see commit
+[bf2d941](https://github.com/baileyp/advent-of-code-2023/commit/bf2d941)) so I decided to ask CP to help
+
+> Can this code be made simpler?
+
+The result is in commit [b549c8b](https://github.com/baileyp/advent-of-code-2023/commit/b549c8b) and from it I learned:
+
+- You can pass a block of code to `Hash.new` and that functions pretty much idential to Python's `defaultdict`
+- Ennumerables have an `each_with_index` method, the yield of which is usable in a `do` loop
+- Strings have a `chars` method
