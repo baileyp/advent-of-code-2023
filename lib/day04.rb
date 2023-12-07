@@ -18,7 +18,17 @@ class Day04
   # @param input [String] The input string containing the card data.
   # @return [Integer] The solution for part 2.
   def self.part2(input)
-    nil
+    scratchcards = input
+      .split("\n")
+      .map { |line| parse_line_2(line) }
+      .to_h
+    scratchcards.each do |card_number, card|
+      num_matches = find_matching_numbers(card).length
+      (1..num_matches).each do |i|
+        scratchcards[card_number + i][:copies] += card.dig(:copies)
+      end
+    end
+    scratchcards.map { |card_number, card| card[:copies] }.sum
   end
 
   # Parses a line of card data and returns a hash representing the card.
@@ -34,6 +44,21 @@ class Day04
       winning_numbers: numbers[0],
       my_numbers: numbers[1]
     }
+  end
+
+  # Parses a line of input and returns a hash containing the card number, winning numbers, my numbers, and copies.
+  #
+  # @param line [String] The input line to parse.
+  # @return [Hash] The parsed data as a hash.
+  def self.parse_line_2(line)
+    parts = line.split(":")
+    card = parts[0].split.last.to_i
+    numbers = parts[1].split("|").map { |part| part.split.map(&:to_i) }
+    [card, {
+      winning_numbers: numbers[0],
+      my_numbers: numbers[1],
+      copies: 1
+    }]
   end
 
   # Finds the matching numbers between the winning numbers and the player's numbers.
