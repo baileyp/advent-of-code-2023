@@ -25,6 +25,48 @@ class Day03
     numbers.sum
   end
 
+  def self.part2(input)
+    grid = input.split("\n")
+    gear_location = []
+    gears = {}
+    (0..grid.length - 1).each do |row|
+      current_number = ""
+      is_adjacent = false
+      (0..grid[row].length - 1).each do |col|
+        cell = grid[row][col]
+        if @@digits.include?(cell)
+          current_number += cell
+          neighbors = neighbors(row, col).each do |neighbor|
+            if grid[neighbor[0]]&.[](neighbor[1]) == '*'
+              gear_location = [neighbor[0], neighbor[1]]
+              is_adjacent = true
+            end
+          end
+        else
+          if is_adjacent
+            if gears[gear_location].nil?
+              gears[gear_location] = []
+            end
+            gears[gear_location] << current_number.to_i
+          end
+          gear_location = []
+          is_adjacent = false
+          current_number = ""
+        end
+      end
+      if is_adjacent
+        if gears[gear_location].nil?
+          gears[gear_location] = []
+        end
+        gears[gear_location] << current_number.to_i
+      end
+      gear_location = []
+      is_adjacent = false
+      current_number = ""
+    end
+    gears.values.filter_map do |gear| gear.inject(:*) if gear.length == 2 end.sum
+  end
+
   def self.neighbors(row, col)
     offsets = [-1, 0, 1]
     result = []
@@ -40,9 +82,5 @@ class Day03
     end
 
     result
-  end
-
-  def self.part2(input)
-    nil
   end
 end

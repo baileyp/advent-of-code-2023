@@ -19,7 +19,6 @@ describe Day03 do
       expect(Day03.part1(input)).to eq(4361)
     end
 
-
     it "returns the sum of the numbers in the input even with a part number at the end" do
       input = <<~INPUT
         467..114..
@@ -37,6 +36,43 @@ describe Day03 do
       expect(Day03.part1(input)).to eq(4362)
     end
   end
+
+  describe ".part2" do
+    it "returns the sum of the gear ratios in the input" do
+      input = <<~INPUT
+        467..114..
+        ...*......
+        ..35..633.
+        ......#...
+        617*......
+        .....+.58.
+        ..592.....
+        ......755.
+        ...$.*....
+        .664.598..
+      INPUT
+
+      expect(Day03.part2(input)).to eq(467835)
+    end
+
+    it "returns the sum of the gear ratios in the input part 2" do
+      input = <<~INPUT
+        467..11...
+        ...*....*.
+        ..35...3.4
+        ......#...
+        617*......
+        .....+.58.
+        ..592.....
+        ......755.
+        ...$.*....
+        .664.598..
+      INPUT
+
+      expect(Day03.part2(input)).to eq(467847)
+    end
+  end
+
 
   describe ".neighbors" do
     it "returns the neighbors of a given cell" do
