@@ -4,6 +4,16 @@ class Day05
     data[:seeds].map{ |seed| to_location_number(seed, data[:maps])}.min
   end
 
+  def self.part2(input)
+    data = self.parse_input(input)
+    locations = []
+    (0..data[:seeds].length - 1).step(2) do |i|
+      from, range = data[:seeds][i], data[:seeds][i + 1]
+      locations << (from..(from + range)).map{ |seed| to_location_number(seed, data[:maps])}.min
+    end
+    locations.min
+  end
+
   def self.parse_input(input)
     maps = input.split("\n\n")
     seeds = maps.shift.split(": ").last.split(" ").map(&:to_i)
