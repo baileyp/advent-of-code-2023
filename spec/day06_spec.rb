@@ -14,7 +14,7 @@ describe Day06 do
 
   describe ".part2" do
     it "returns the solution to part 2" do
-      expect(Day06.part2(input)).to eq(nil)
+      expect(Day06.part2(input)).to eq(71503)
     end
   end
 
@@ -22,6 +22,12 @@ describe Day06 do
     it "returns the input parsed into races" do
       races = [[7, 9], [15, 40], [30, 200]]
       expect(Day06.parse_input(input)).to eq(races)
+    end
+  end
+
+  describe ".parse_input2" do
+    it "returns the input parsed into a single race" do
+      expect(Day06.parse_input2(input)).to eq([71530, 940200])
     end
   end
 end
