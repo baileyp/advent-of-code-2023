@@ -134,7 +134,8 @@ end
 ```
 
 Validates it when I remove the `+` from the regex. Now here's the interesting part - *I* am the source of this bug. I
-prompted CP as "I need to find the first and the nth **integer**" and because I wrote **integer** instead of **digit**, CP did the right thing. I verified this by re-prompting but using **digit** instead and it gave the correct result.
+prompted CP as "I need to find the first and the nth **integer**" and because I wrote **integer** instead of **digit**,
+CP did the right thing. I verified this by re-prompting but using **digit** instead and it gave the correct result.
 
 Garbage in, garbage out.
 

@@ -2,7 +2,7 @@ require_relative '../lib/day04'
 
 describe Day04 do
   describe ".part1" do
-    it "returns the sum of the numbers in the input" do
+    it "returns the solution to part 1" do
       input = <<~INPUT
         Card 1: 41 48 83 86 17 | 83 86  6 31 17  9 48 53
         Card 2: 13 32 20 16 61 | 61 30 68 82 17 32 24 19
@@ -16,8 +16,8 @@ describe Day04 do
     end
   end
 
-  describe ".part1" do
-    it "returns the sum of the numbers in the input" do
+  describe ".part2" do
+    it "returns the solution to part 2" do
       input = <<~INPUT
         Card 1: 41 48 83 86 17 | 83 86  6 31 17  9 48 53
         Card 2: 13 32 20 16 61 | 61 30 68 82 17 32 24 19

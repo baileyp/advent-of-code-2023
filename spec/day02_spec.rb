@@ -2,7 +2,7 @@ require_relative '../lib/day02'
 
 describe Day02 do
   describe ".part1" do
-    it "returns the sum of the numbers in the input" do
+    it "returns the solution to part 1" do
       input = <<~INPUT
         Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
         Game 2: 1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue
@@ -16,7 +16,7 @@ describe Day02 do
   end
 
   describe ".part2" do
-    it "returns the sum of the numbers in the input" do
+    it "returns the solution to part 2" do
       input = <<~INPUT
         Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
         Game 2: 1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue

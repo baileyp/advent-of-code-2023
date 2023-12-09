@@ -168,3 +168,5 @@ Now I'm all set and ready for the first puzzle to drop, and I *still* haven't wr
 - [Day 2](./notes/day2.md)
 - [Day 3](./notes/day3.md)
 - [Day 4](./notes/day4.md)
+- [Day 5](./notes/day5.md)
+- [Day 6](./notes/day6.md)

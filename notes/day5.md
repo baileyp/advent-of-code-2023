@@ -36,4 +36,7 @@ Basically, the `break` after adjusting `num` was missing. Thanks CP ⭐
 
 ## Part 2
 
-Was dreading this eventuality and I had a hunch with how this puzzle was constructed that part 2 would come along and deliver some abuse, which it did. Based on the real puzzle input, there are a bit over 2.2 billion iterations to this puzzle - a `O(n)` solution clearly won't do. Might need to bust out some maths. Right now I don't see the way forward so I'm gonna pass on this one until I've had more time to think.
+Was dreading this eventuality and I had a hunch with how this puzzle was constructed that part 2 would come along and
+deliver some abuse, which it did. Based on the real puzzle input, there are a bit over 2.2 billion iterations to this
+puzzle - a `O(n)` solution clearly won't do. Might need to bust out some maths. Right now I don't see the way forward so
+I'm gonna pass on this one until I've had more time to think.

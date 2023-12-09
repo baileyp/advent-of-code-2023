@@ -38,13 +38,13 @@ describe Day05 do
   INPUT
 
   describe ".part1" do
-    it "returns the sum of the numbers in the input" do
+    it "rreturns the solution to part 1" do
       expect(Day05.part1(input)).to eq(35)
     end
   end
 
   describe ".part2" do
-    it "returns the sum of the numbers in the input" do
+    it "returns the solution to part 2" do
       expect(Day05.part2(input)).to eq(46)
     end
   end

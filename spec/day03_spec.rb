@@ -2,7 +2,7 @@ require_relative '../lib/day03'
 
 describe Day03 do
   describe ".part1" do
-    it "returns the sum of the numbers in the input" do
+    it "returns the solution to part 1" do
       input = <<~INPUT
         467..114..
         ...*......
@@ -19,7 +19,7 @@ describe Day03 do
       expect(Day03.part1(input)).to eq(4361)
     end
 
-    it "returns the sum of the numbers in the input even with a part number at the end" do
+    it "returns the solution to part 1 even with a part number at the end" do
       input = <<~INPUT
         467..114..
         ...*......
@@ -38,7 +38,7 @@ describe Day03 do
   end
 
   describe ".part2" do
-    it "returns the sum of the gear ratios in the input" do
+    it "returns the solution to part 2" do
       input = <<~INPUT
         467..114..
         ...*......
@@ -55,7 +55,7 @@ describe Day03 do
       expect(Day03.part2(input)).to eq(467835)
     end
 
-    it "returns the sum of the gear ratios in the input part 2" do
+    it "returns the solution to part 2" do
       input = <<~INPUT
         467..11...
         ...*....*.
