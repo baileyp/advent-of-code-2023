@@ -47,3 +47,4 @@ Happy coding!
 - [Day 5](./notes/day5.md)
 - [Day 6](./notes/day6.md)
 - [Making a Generator](./notes/making_a_generator.md)
+- [Day 7](./notes/day7.md)
