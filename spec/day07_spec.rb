@@ -17,7 +17,7 @@ describe Day07 do
 
   describe ".part2" do
     it "returns the solution to part 2" do
-      expect(Day07.part2(input)).to eq(nil)
+      expect(Day07.part2(input)).to eq(5905)
     end
   end
 
@@ -73,7 +73,24 @@ describe Day07 do
   describe ".card_oridnal_value" do
     it "convert card names to a numeric ordinal value" do
       expect(Day07.card_oridnal_value('A')).to eq(14)
+      expect(Day07.card_oridnal_value('J')).to eq(11)
       expect(Day07.card_oridnal_value('3')).to eq(3)
+    end
+
+    it "works with jokers, too" do
+      expect(Day07.card_oridnal_value('J', true)).to eq(1)
+    end
+  end
+
+  describe ".apply_jokers" do
+    it "replaces jokers with the best card option" do
+      expect(Day07.apply_jokers('QJJQ2')).to eq('QQQQ2')
+      expect(Day07.apply_jokers('4321J')).to eq('43214')
+      expect(Day07.apply_jokers('4311J')).to eq('43111')
+    end
+
+    it "even works with all jokers" do
+      expect(Day07.apply_jokers('JJJJJ')).to eq('AAAAA')
     end
   end
 end

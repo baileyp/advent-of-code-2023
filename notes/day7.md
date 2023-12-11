@@ -27,10 +27,23 @@ sorted_array = array.sort do |a, b|
 end
 ```
 
-This was enough to get me going. After squashing a couple bugs because I was being lazy and didn't write enough unit
-tests (a missing `string.to_i` in my `card_oridnal_value` function bit me for longer than I care to admit) I had a
-solution ⭐
+This was enough to get me going - yay spaceship operator. After squashing a couple bugs because I was being lazy and
+didn't write enough unit tests (a missing `string.to_i` in my `card_oridnal_value` function bit me for longer than I
+care to admit) I had a solution ⭐
 
 ## Part 2
 
-Incomplete
+Only help I needed from CP here was this:
+
+> Can I delete a key from a hash in ruby?
+
+I suppose I could have assumed `hash.delete` would exist but I didn't and so here we are ⭐. However, at this point I
+should say that while I'm committed to my original goals and using CP as my only reference, for questions like these it
+is clear that CP is not the most efficient tool.
+
+I did forget to mention in my Part 1 notes that I also needed help with this:
+
+> In ruby how can I return from a function while in the middle of a loop?
+
+I had become so accustomed to not using any sort of explicit `return` in my functions, it didn't even really dawn on me
+that it existed as a keyword.
