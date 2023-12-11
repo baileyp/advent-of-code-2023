@@ -48,3 +48,4 @@ Happy coding!
 - [Day 6](./notes/day6.md)
 - [Making a Generator](./notes/making_a_generator.md)
 - [Day 7](./notes/day7.md)
+- [Day 8](./notes/day8.md)
