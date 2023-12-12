@@ -45,8 +45,12 @@ describe Day11 do
   end
 
   describe ".part2" do
-    it "returns the solution to part 2" do
-      expect(Day11.part2(input)).to eq(nil)
+    it "returns the solution to part 2 at 10x expansion" do
+      expect(Day11.part2(input, 10)).to eq(1030)
+    end
+
+    it "returns the solution to part 2 at 100x expansion" do
+      expect(Day11.part2(input, 100)).to eq(8410)
     end
   end
 
@@ -58,7 +62,7 @@ describe Day11 do
 
   describe ".expand_space" do
     it "expands the empty space between galaxies" do
-      expect(Day11.expand_space(galaxies)).to eq(galaxies_expanded)
+      expect(Day11.expand_space(galaxies, 2)).to eq(galaxies_expanded)
     end
   end
 end

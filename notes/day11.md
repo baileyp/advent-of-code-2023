@@ -12,4 +12,5 @@ Anyway, for those combination of factors I did not find this troubling ⭐
 
 ## Part 2
 
-Incomplete
+Smooth sailing. Thanks to a non-naive solution for part 1, part 2 just needed parameterization of the expansion factor.
+Added a couple unit tests to validate and ⭐

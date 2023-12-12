@@ -1,8 +1,8 @@
 require 'set'
 
 class Day11
-  def self.part1(input)
-    galaxies = expand_space(find_galaxies(input))
+  def self.part1(input, f=2)
+    galaxies = expand_space(find_galaxies(input), f)
 
     distances = {}
 
@@ -17,8 +17,8 @@ class Day11
     distances.values.sum
   end
 
-  def self.part2(input)
-    nil
+  def self.part2(input, f=1000000)
+    part1(input, f)
   end
 
   def self.find_galaxies(input)
@@ -33,15 +33,15 @@ class Day11
     galaxies
   end
 
-  def self.expand_space(galaxies)
+  def self.expand_space(galaxies, expansion_factor)
     rows = Set.new(galaxies.map { |g| g[0] })
     row_gaps = Set.new((0..rows.max).to_a) - rows
     columns = Set.new(galaxies.map { |g| g[1] })
     column_gaps = Set.new((0..columns.max).to_a) - columns
 
     galaxies.map do |galaxy|
-      row_offset = row_gaps.filter{ |r| r < galaxy[0] }.length
-      col_offset = column_gaps.filter{ |c| c < galaxy[1] }.length
+      row_offset = row_gaps.filter{ |r| r < galaxy[0] }.length * (expansion_factor - 1)
+      col_offset = column_gaps.filter{ |c| c < galaxy[1] }.length * (expansion_factor - 1)
       [galaxy[0] + row_offset, galaxy[1] + col_offset]
     end
   end
