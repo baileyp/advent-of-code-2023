@@ -1,5 +1,7 @@
 # Day 1
 
+[Solution](../lib/day01.rb) | [Spec](../spec/day01_spec.rb) | [Input](../input/day01.txt)
+
 ## Preamble
 
 There's a basic bit I didn't solve with my initial bootstrap, perhaps best explained by my prompt:

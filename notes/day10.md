@@ -1,5 +1,7 @@
 # Day 10
 
+[Solution](../lib/day10.rb) | [Spec](../spec/day10_spec.rb) | [Input](../input/day10.txt)
+
 ## Part 1
 
 Not the prettiest code I've written, but I did manage to do the entire solution with only tab-complete help from CP,

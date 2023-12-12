@@ -1,5 +1,7 @@
 # Day 8
 
+[Solution](../lib/day08.rb) | [Spec](../spec/day08_spec.rb) | [Input](../input/day08.txt)
+
 ## Part 1
 
 Graphs and queues! Not a hard puzzle, it turns out, but I did have to ask CP some basics about queues:

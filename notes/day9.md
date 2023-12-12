@@ -1,5 +1,10 @@
 # Day 9
 
+[Solution](../lib/day09.rb) | [Spec](../spec/day09_spec.rb) | [Input](../input/day09.txt)
+
+- [Link to solution](../lib/day09.rb)
+- [Link to spec](../spec/day09_spec.rb)
+
 ## Part 1
 
 Nothing to report. No CP prompting and but some decent help while writing unit tests. Not a hard puzzle for me ⭐

@@ -1,5 +1,7 @@
 # Day 7
 
+[Solution](../lib/day07.rb) | [Spec](../spec/day07_spec.rb) | [Input](../input/day07.txt)
+
 ## Part 1
 
 At first read I felt like I understood this problem pretty well, so I started my solving with this prompt:

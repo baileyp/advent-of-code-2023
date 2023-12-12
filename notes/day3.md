@@ -1,5 +1,7 @@
 # Day 3
 
+[Solution](../lib/day03.rb) | [Spec](../spec/day03_spec.rb) | [Input](../input/day03.txt)
+
 ## Part 1
 
 Already starting to feel comfortable writing ruby unassisted. I can't pretend this is the prettiest code or maybe the

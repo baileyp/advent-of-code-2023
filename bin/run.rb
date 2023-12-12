@@ -11,7 +11,6 @@ require_relative '../lib/my_cli'
   end
 end
 
-
 day = ARGV[0].to_i
 part = ARGV[1].to_i
 

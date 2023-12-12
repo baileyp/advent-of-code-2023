@@ -1,5 +1,7 @@
 # Day 6
 
+[Solution](../lib/day06.rb) | [Spec](../spec/day06_spec.rb) | [Input](../input/day06.txt)
+
 ## Part 1
 
 Not much to say here. Puzzle was easy and code was easy. I did TDD for `parse_input` and prompted CP for the code, just

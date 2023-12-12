@@ -1,5 +1,7 @@
 # Day 2
 
+[Solution](../lib/day02.rb) | [Spec](../spec/day02_spec.rb) | [Input](../input/day02.txt)
+
 ## Part 1
 
 Only after just one day I already felt good about getting started with just writing code instead of beginning with any

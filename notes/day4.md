@@ -1,5 +1,7 @@
 # Day 4
 
+[Solution](../lib/day04.rb) | [Spec](../spec/day04_spec.rb) | [Input](../input/day04.txt)
+
 ## Part 1
 
 Yet another day where I wrote the unit tests first and prompted CP to write code that would satisfy them. Well, for the
