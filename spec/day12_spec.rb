@@ -41,6 +41,8 @@ describe Day12 do
   describe ".test_condition_partial" do
     it "returns the number of pots with plants" do
       expect(Day12.test_condition_partial("#.#.#", [1, 1, 3])).to eq(true)
+      expect(Day12.test_condition_partial("#..###", [4, 1, 1])).to eq(false)
+      expect(Day12.test_condition_partial("#.#...", [4, 1, 1])).to eq(false)
     end
   end
 

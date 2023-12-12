@@ -35,9 +35,9 @@ class Day12
   def self.make_permutations_2(springs, record)
     permutations = springs.chars.reduce(['']) do |current, char|
       if char == '?'
-        current.product(['.', '#']).map(&:join)
+        current.product(['.', '#']).map(&:join).filter{ |str| test_condition_partial(str, record) }
       else
-        current.filter_map { |str| str + char if test_condition_partial(str + char, record) }
+        current.filter{ |str| test_condition_partial(str, record) }.map { |str| str + char }
       end
     end
     permutations
@@ -45,10 +45,9 @@ class Day12
 
   def self.test_condition_partial(springs, record)
     found_springs = springs.gsub(/^\.+|\.+$/, '').split(/\.+/).map(&:length)
-    found_springs.each_with_index do |found_spring, index|
-      return false if found_spring > record[index].to_i
-    end
-    true
+    sets = found_springs.zip(record)
+    sets.pop
+    sets.all?{ |found_spring, record| found_spring == record }
   end
 
   def self.fold(springs, record)
