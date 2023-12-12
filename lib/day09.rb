@@ -9,7 +9,17 @@ class Day09
   end
 
   def self.part2(input)
-    nil
+    histories = input
+      .each_line
+      .map { |line| line.split.map(&:to_i) }
+      .map { |history| generate_all_differences(history) }
+      .map { |differences| differences.map { |difference| curry_subtraction(difference.first) } }
+      .map { |callbacks| callbacks.reduce(0) { |acc, callback| callback.call(acc) } }
+      .sum
+  end
+
+  def self.curry_subtraction(a)
+    lambda { |b| a - b }
   end
 
   def self.generate_all_differences(history)
