@@ -11,4 +11,6 @@ insufficient for part 2. Either way ⭐
 
 ## Part 2
 
-Incomplete
+Yeah, nope. I wrote a slightly less greedy version of my solution for part 1 which did make it about 3x faster (which
+I'll commit with this note) but it's nowhere near fast enough for the real input - not even the integration test version
+runs in a reasonable amount of time.

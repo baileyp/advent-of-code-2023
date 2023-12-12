@@ -18,7 +18,7 @@ describe Day12 do
 
   describe ".part2" do
     it "returns the solution to part 2" do
-      expect(Day12.part2(input)).to eq(nil)
+      expect(Day12.part2(input)).to eq(525152)
     end
   end
 
@@ -35,6 +35,19 @@ describe Day12 do
       expect(Day12.test_condition("#.#.###", [1, 1, 3])).to eq(true)
       expect(Day12.test_condition("#..####", [1, 1, 3])).to eq(false)
       expect(Day12.test_condition("..#..#....###.", [1, 1, 3])).to eq(true)
+    end
+  end
+
+  describe ".test_condition_partial" do
+    it "returns the number of pots with plants" do
+      expect(Day12.test_condition_partial("#.#.#", [1, 1, 3])).to eq(true)
+    end
+  end
+
+  describe ".fold" do
+    it "repeats the inputs 5x" do
+      expect(Day12.fold(".#", [1])).to eq([".#?.#?.#?.#?.#", [1, 1, 1, 1, 1]])
+      expect(Day12.fold("A", [3, 4])).to eq(["A?A?A?A?A", [3, 4, 3, 4, 3, 4, 3, 4, 3, 4]])
     end
   end
 end
