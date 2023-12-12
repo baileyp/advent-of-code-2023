@@ -44,6 +44,12 @@ field as defined so first I had to write functions to both correctly determine w
 to clean up all the junk pipe laying around.
 
 Once I had those done I was able to beat up my ray casting function with unit tests based on the sample input until it
-worked, and when it did... ⭐! It's not the fastest solution - takes around 18 seconds on this M2 Pro Macbook. Not sure
+worked, and when it did... ⭐! ~~It's not the fastest solution - takes around 18 seconds on this M2 Pro Macbook. Not sure
 which function is the slowest but speed optimization is not one of my goals this year. Maybe as an exercise for a later
-day I'll come back and profile this - might be nice to get some familiarity with a profiler.
+day I'll come back and profile this - might be nice to get some familiarity with a profiler.~~
+
+🤦 No sooner did I hit `git push` when I realized what the problem was. I had initially written `path` using a `Set`
+because I knew constant-time lookups would be nice, but then switched to an array when I also needed `first` and `last`
+functionality for `determine_start_pipe`.
+
+Converting the `path` to a `Set` in `cleanup_field` dropped the runtime down to 0.03 seconds.

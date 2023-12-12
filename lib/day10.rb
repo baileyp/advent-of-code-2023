@@ -1,3 +1,5 @@
+require 'set'
+
 class Day10
   @@L_TO_R = ['-', '7', 'J', 'S']
   @@R_TO_L = ['-', 'F', 'L', 'S']
@@ -117,10 +119,11 @@ class Day10
   end
 
   def self.cleanup_field(field, path, start_pipe)
+    path_as_set = Set.new(path)
     field.map.with_index do |line, row|
       new_line = ''
       line.chars.each_with_index do |cell, col|
-        next_char = path.include?([row, col]) ? cell : '.'
+        next_char = path_as_set.include?([row, col]) ? cell : '.'
         new_line += next_char == 'S' ? start_pipe : next_char
       end
       new_line
