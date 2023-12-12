@@ -17,7 +17,14 @@ class Day08
   end
 
   def self.part2(input)
-    nil
+    line_one, rest = input.split("\n\n")
+    graph = parse_graph(rest)
+
+    graph
+      .keys
+      .find_all do |node| node.to_s.end_with?("A") end
+      .map{ |node| locate_z(node, parse_instructions(line_one), graph) }
+      .inject(:lcm)
   end
 
   def self.parse_input(input)
@@ -36,5 +43,18 @@ class Day08
       [parent.to_sym, {:L => children[0], :R => children[1]}]
     end
     graph.to_h
+  end
+
+  def self.locate_z(root_node, instructions, graph)
+    instruction = instructions.pop
+    node = root_node.dup
+    steps = 0
+    while !node.to_s.end_with?("Z") do
+      node = graph[node][instruction]
+      steps += 1
+      instructions << instruction
+      instruction = instructions.pop
+    end
+    steps
   end
 end

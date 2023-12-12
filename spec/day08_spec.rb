@@ -21,6 +21,19 @@ describe Day08 do
     ZZZ = (ZZZ, ZZZ)
   INPUT
 
+  input3 = <<~INPUT
+    LR
+
+    11A = (11B, XXX)
+    11B = (XXX, 11Z)
+    11Z = (11B, XXX)
+    22A = (22B, XXX)
+    22B = (22C, 22C)
+    22C = (22Z, 22Z)
+    22Z = (22B, 22B)
+    XXX = (XXX, XXX)
+  INPUT
+
   describe ".part1" do
     it "returns the solution to part 1" do
       expect(Day08.part1(input)).to eq(2)
@@ -31,7 +44,7 @@ describe Day08 do
   describe ".part2" do
     it "returns the solution to part 2" do
 
-      expect(Day08.part2(input)).to eq(nil)
+      expect(Day08.part2(input3)).to eq(6)
     end
   end
 
