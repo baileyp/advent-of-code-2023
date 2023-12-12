@@ -24,6 +24,8 @@ class MyCli
     open('README.md', 'a') do |f|
       f.puts "- [Day #{day}](./notes/day#{day}.md)\n"
     end
+
+    system("code lib/day#{day_str}.rb spec/day#{day_str}_spec.rb notes/day#{day}.md input/day#{day_str}.txt")
   end
 
   def self.copy_and_replace_template(template_file, destination_file, day_str)
