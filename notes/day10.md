@@ -5,7 +5,7 @@
 Not the prettiest code I've written, but I did manage to do the entire solution with only tab-complete help from CP,
 which continues to impress me.
 
-I did prompt CP for a simple version of my `locate_next_pipe` function but I didn't accept the result, I just wanted to
+I did prompt CP for a simpler version of my `locate_next_pipe` function but I didn't accept the result, I just wanted to
 see what it proposed:
 
 ```ruby
@@ -36,12 +36,12 @@ Any any rate, my solution worked just fine so ⭐
 
 ## Part 2
 
-Fortunately, I alredy know at least one method for determining if a point is inside a polgon and it's called
+Fortunately, I alredy know at least one method for determining if a point is inside a polygon and it's called
 [ray casting](https://en.wikipedia.org/wiki/Point_in_polygon#Ray_casting_algorithm). Still, this wouldn't work with the
-field as defined so first I had to write functions to both correctly determind what pipe was at the starting point _and_
+field as defined so first I had to write functions to both correctly determine what pipe was at the starting point _and_
 to clean up all the junk pipe laying around.
 
 Once I had those done I was able to beat up my ray casting function with unit tests based on the sample input until it
 worked, and when it did... ⭐! It's not the fastest solution - takes around 18 seconds on this M2 Pro Macbook. Not sure
 which function is the slowest but speed optimization is not one of my goals this year. Maybe as an exercise for a later
-day I'll come back and profile this.
+day I'll come back and profile this - might be nice to get some familiarity with a profiler.
