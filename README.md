@@ -53,3 +53,4 @@ Happy coding!
 - [Day 10](./notes/day10.md)
 - [Day 11](./notes/day11.md)
 - [Day 12](./notes/day12.md)
+- [Day 13](./notes/day13.md)
