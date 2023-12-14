@@ -18,4 +18,18 @@ does a lot of string-to-array conversion and back but it's also tidy so I don't 
 
 ## Part 2
 
-Incomplete
+Actually, you know what, not so bad. At first when I read _one billion_ cycles I was like "crap" but almost immediately
+it seemed clear to me that eventually the rocks moving around would be periodic[^periodic], given the finite space and
+quantity.
+
+With that assumption baked in my brain, I got started. I did prompt CP for a little help with one of my functions:
+
+> What's an idiomatic ruby way to repeat a block of code N times?
+
+And that's how I learned about `Integer.times` which I _can't tell you_ how much I wish other languages had.
+
+The rest was honestly not that hard. Maybe from previous puzzle years or something but I knew exactly how to solve this
+(given the periodic assumption) and I was right ⭐
+
+[^periodic]:
+    As it turns out, the period is quite short (14 with my input) and was found in less than 200 iterations.

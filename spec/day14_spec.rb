@@ -22,7 +22,7 @@ describe Day14 do
 
   describe ".part2" do
     it "returns the solution to part 2" do
-      expect(Day14.part2(input)).to eq(nil)
+      expect(Day14.part2(input)).to eq(64)
     end
   end
 
