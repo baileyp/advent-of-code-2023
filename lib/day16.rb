@@ -1,7 +1,45 @@
 class Day16
   def self.part1(input)
+    energize_contraption(*parse_input(input), [0, -1, :right])
+  end
+
+  def self.part2(input)
     width, height, contraption = parse_input(input)
-    beams = [[0, -1, :right]]
+    most_energized = 0
+    for row in 0...height
+      most_energized = [
+        most_energized,
+        energize_contraption(width, height, contraption, [row, -1, :right]),
+        energize_contraption(width, height, contraption, [row, width, :left])
+      ].max
+    end
+
+    for col in 0...width
+      most_energized = [
+        most_energized,
+        energize_contraption(width, height, contraption, [-1, col, :down]),
+        energize_contraption(width, height, contraption, [height, col, :up])
+      ].max
+    end
+
+    return most_energized
+  end
+
+  def self.parse_input(input)
+    lines = input.split(/\n/)
+    width = lines.first.length
+    height = lines.length
+    contraption = {}
+    lines.each_with_index do |line, row|
+      line.chars.each_with_index do |char, col|
+        contraption[[row, col]] = char if char != '.'
+      end
+    end
+    [width, height, contraption]
+  end
+
+  def self.energize_contraption(width, height, contraption, from)
+    beams = [from]
     energized = Hash.new{ |h, k| h[k] = []}
 
     while beams.length > 0
@@ -66,22 +104,6 @@ class Day16
       beams.each{ |b| energized[[b[0], b[1]]] << b[2]}
     end
     energized.length
-  end
 
-  def self.part2(input)
-    nil
-  end
-
-  def self.parse_input(input)
-    lines = input.split(/\n/)
-    width = lines.first.length
-    height = lines.length
-    contraption = {}
-    lines.each_with_index do |line, row|
-      line.chars.each_with_index do |char, col|
-        contraption[[row, col]] = char if char != '.'
-      end
-    end
-    [width, height, contraption]
   end
 end
