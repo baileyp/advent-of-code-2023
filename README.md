@@ -57,3 +57,4 @@ Happy coding!
 - [Day 14](./notes/day14.md)
 - [Day 15](./notes/day15.md)
 - [Day 16](./notes/day16.md)
+- [Day 18](./notes/day18.md)
