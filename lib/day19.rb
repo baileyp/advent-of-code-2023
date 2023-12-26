@@ -13,10 +13,23 @@ class Day19
   end
 
   def self.part2(input)
-    nil
-  end
+    raw_workflows, parts = parse_input(input)
+    workflows = raw_workflows.map { |workflow| [workflow.first, make_workflow_2(workflow.last)] }.to_h
 
-  def self.parse_workflow(line)
+    chains = []
+    workflows[:A] = -> (workflows, chain) { chains << chain }
+    workflows[:R] = -> (workflows, chain) {}
+
+    workflows[:in].call(workflows, {x: [1, 4000], m: [1, 4000], a: [1, 4000], s: [1, 4000]})
+
+    chains
+      .map do |chain|
+        chain
+          .values
+          .map { |from, to| (to - from + 1) || 0 }
+          .inject(:*)
+      end
+      .sum
   end
 
   def self.parse_part(line)
@@ -58,6 +71,26 @@ class Day19
         goto, field, op, value = rule[:goto], rule[:field], rule[:op], rule[:value]
         return workflows[goto].call(workflows, part) if !op
         return workflows[goto].call(workflows, part) if [part[field], value].inject(op)
+      end
+    }
+  end
+
+  def self.make_workflow_2(rules)
+    -> (workflows, quantities) {
+      remainders = {**quantities}
+      rules.each do |rule|
+        goto, field, op, value = rule[:goto], rule[:field], rule[:op], rule[:value]
+        from, to = quantities[field]
+
+        if op == :<
+          workflows[goto].call(workflows, {**remainders, field => [from, [to, value - 1].min]})
+          remainders = {**remainders, field => [[from, value].max, to]}
+        elsif op == :>
+          workflows[goto].call(workflows, {**remainders, field => [[from, value + 1].max, to]})
+          remainders = {**remainders, field => [from, [to, value].min]}
+        else
+          workflows[goto].call(workflows, {**remainders})
+        end
       end
     }
   end

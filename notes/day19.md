@@ -12,4 +12,8 @@ being `eval` since... you know... _eval is **evil**_. ⭐
 
 ## Part 2
 
-Incomplete
+Phooey. I really thought I had this one. Solution works on the sample input but not the real input. I thought maybe it
+was happening because of some range overlaps (`from` being greater than `to`) but when I put in guard checks for that it
+didn't change the output.
+
+I'll have to come back to this later.
