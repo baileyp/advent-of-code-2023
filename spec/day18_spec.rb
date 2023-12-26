@@ -26,7 +26,7 @@ describe Day18 do
 
   describe ".part2" do
     it "returns the solution to part 2" do
-      expect(Day18.part2(input)).to eq(nil)
+      expect(Day18.part2(input)).to eq(952408144115)
     end
   end
 
@@ -47,6 +47,27 @@ describe Day18 do
         { direction: :U, distance: 3, color: "#a77fa3" },
         { direction: :L, distance: 2, color: "#015232" },
         { direction: :U, distance: 2, color: "#7a21e3" }
+      ])
+    end
+  end
+
+  describe ".parse_input_2" do
+    it "returns an array of instructions for part 2" do
+      expect(Day18.parse_input_2(input)).to eq([
+        { direction: :R, distance: 461937 },
+        { direction: :D, distance: 56407 },
+        { direction: :R, distance: 356671 },
+        { direction: :D, distance: 863240 },
+        { direction: :R, distance: 367720 },
+        { direction: :D, distance: 266681 },
+        { direction: :L, distance: 577262 },
+        { direction: :U, distance: 829975 },
+        { direction: :L, distance: 112010 },
+        { direction: :D, distance: 829975 },
+        { direction: :L, distance: 491645 },
+        { direction: :U, distance: 686074 },
+        { direction: :L, distance: 5411 },
+        { direction: :U, distance: 500254 },
       ])
     end
   end

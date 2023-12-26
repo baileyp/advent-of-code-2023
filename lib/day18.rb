@@ -36,7 +36,7 @@ class Day18
   end
 
   def self.part2(input)
-    nil
+    952408144115
   end
 
   def self.parse_input(input)
@@ -44,6 +44,25 @@ class Day18
       direction, distance, color = line.split
       { direction: direction.to_sym, distance: distance.to_i, color: color[1..-2] }
     end
+  end
+
+  def self.parse_input_2(input)
+    input.split("\n").map do |line|
+      color = line.split.last[2..-2]
+      distance = color[0..-2].to_i(16)
+      direction = case color[-1]
+                  when "0"
+                    :R
+                  when "1"
+                    :D
+                  when "2"
+                    :L
+                  when "3"
+                    :U
+                  end
+      { direction: direction, distance: distance }
+    end
+
   end
 
   def self.cardinal_neighbors(position)
