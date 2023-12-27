@@ -14,4 +14,6 @@ Anyways, as I've been in the habit of saying recently, not the prettiest code bu
 
 ## Part 2
 
-Incomplete
+Hrmph. This is the 3rd day in a row where part 2 is ruthless against literal modelings of the problem space. I'm going
+to guess that the solution here involves some sort of tree-walk permutation calculation thing. Not in the mood for that
+just now, going to move on.
