@@ -1,6 +1,9 @@
 # Day 4
 
-[Solution](../lib/day04.rb) | [Spec](../spec/day04_spec.rb) | [Input](../input/day04.txt)
+[Puzzle ↗️](https://adventofcode.com/2023/day/4) |
+[Solution](../lib/day04.rb) |
+[Spec](../spec/day04_spec.rb) |
+[Input](../input/day04.txt)
 
 ## Part 1
 

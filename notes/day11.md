@@ -1,6 +1,9 @@
 # Day 11
 
-[Solution](../lib/day11.rb) | [Spec](../spec/day11_spec.rb) | [Input](../input/day11.txt)
+[Puzzle ↗️](https://adventofcode.com/2023/day/11) |
+[Solution](../lib/day11.rb) |
+[Spec](../spec/day11_spec.rb) |
+[Input](../input/day11.txt)
 
 ## Part 1
 

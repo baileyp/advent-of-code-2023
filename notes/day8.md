@@ -1,6 +1,9 @@
 # Day 8
 
-[Solution](../lib/day08.rb) | [Spec](../spec/day08_spec.rb) | [Input](../input/day08.txt)
+[Puzzle ↗️](https://adventofcode.com/2023/day/8) |
+[Solution](../lib/day08.rb) |
+[Spec](../spec/day08_spec.rb) |
+[Input](../input/day08.txt)
 
 ## Part 1
 

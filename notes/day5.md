@@ -1,6 +1,9 @@
 # Day 5
 
-[Solution](../lib/day05.rb) | [Spec](../spec/day05_spec.rb) | [Input](../input/day05.txt)
+[Puzzle ↗️](https://adventofcode.com/2023/day/5) |
+[Solution](../lib/day05.rb) |
+[Spec](../spec/day05_spec.rb) |
+[Input](../input/day05.txt)
 
 ## Part 1
 
