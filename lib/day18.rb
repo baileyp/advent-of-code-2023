@@ -36,7 +36,11 @@ class Day18
   end
 
   def self.part2(input)
-    952408144115
+    instructions = parse_input_2(input)
+    vertices = to_vertices(instructions)
+    trench = instructions.map { |instruction| instruction[:distance] }.sum
+
+    return area_of_polygon(vertices).to_i + (trench / 2) + 1
   end
 
   def self.parse_input(input)
@@ -62,7 +66,26 @@ class Day18
                   end
       { direction: direction, distance: distance }
     end
+  end
 
+  def self.to_vertices(instructions)
+    vertices = [[0, 0]]
+    row, col = 0, 0
+    instructions.each do |instruction|
+      distance = instruction[:distance]
+      case instruction[:direction]
+      when :U
+        row -= distance
+      when :D
+        row += distance
+      when :R
+        col += distance
+      when :L
+        col -= distance
+      end
+      vertices.push([row, col])
+    end
+    vertices
   end
 
   def self.cardinal_neighbors(position)
@@ -72,5 +95,18 @@ class Day18
       [position[0], position[1] - 1],
       [position[0], position[1] + 1]
     ]
+  end
+
+  def self.area_of_polygon(points)
+    n = points.size
+    area = 0.0
+
+    j = n - 1
+    for i in 0...n
+      area += (points[j][0] + points[i][0]) * (points[j][1] - points[i][1])
+      j = i
+    end
+
+    area.abs / 2.0
   end
 end
