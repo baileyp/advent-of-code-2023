@@ -7,10 +7,11 @@ class Day17
   end
 
   def self.part2(input)
-    nil
+    grid = input.split("\n").map { |row| row.split('').map(&:to_i) }
+    find_lowest_heat(grid, true)
   end
 
-  def self.find_lowest_heat(grid)
+  def self.find_lowest_heat(grid, ultra = false)
     target = [grid.length - 1, grid[0].length - 1]
     queue = PriorityQueue.new()
     queue << [0, [0, 0], :E, 0]
@@ -24,7 +25,7 @@ class Day17
 
     while !queue.empty?
       heat, position, direction, steps = queue.pop
-      return heat if position == target
+      return heat if position == target && (ultra ? steps >= 4 : true)
 
       next if visited.include?([position, direction, steps])
       visited << [position, direction, steps]
@@ -34,9 +35,9 @@ class Day17
       heat_left = dig.call(*left[0..1])
       heat_forward = dig.call(*forward)
 
-      queue << [heat + heat_right, right[0..1], right.last, 1] if heat_right
-      queue << [heat + heat_left, left[0..1], left.last, 1] if heat_left
-      queue << [heat + heat_forward, forward, direction, steps + 1] if steps < 3 && heat_forward
+      queue << [heat + heat_right, right[0..1], right.last, 1] if heat_right && (ultra ? steps >= 4 : true)
+      queue << [heat + heat_left, left[0..1], left.last, 1] if heat_left && (ultra ? steps >= 4 : true)
+      queue << [heat + heat_forward, forward, direction, steps + 1] if steps < (ultra ? 10 : 3) && heat_forward
     end
   end
 

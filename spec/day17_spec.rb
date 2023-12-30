@@ -17,6 +17,14 @@ describe Day17 do
     4322674655533
   INPUT
 
+  input2 = <<~INPUT
+    111111111111
+    999999999991
+    999999999991
+    999999999991
+    999999999991
+  INPUT
+
   describe ".part1" do
     it "returns the solution to part 1" do
       expect(Day17.part1(input)).to eq(102)
@@ -25,7 +33,11 @@ describe Day17 do
 
   describe ".part2" do
     it "returns the solution to part 2" do
-      expect(Day17.part2(input)).to eq(nil)
+      expect(Day17.part2(input)).to eq(94)
+    end
+
+    it "returns the solution to part 2 input 2" do
+      expect(Day17.part2(input2)).to eq(71)
     end
   end
 end

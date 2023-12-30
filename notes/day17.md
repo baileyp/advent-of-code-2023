@@ -90,4 +90,5 @@ additional time is from having to sort the array-based queue after every iterati
 
 ## Part 2
 
-Incomplete
+Thankfully the solution for part 2 is just a small modification to the conditions for steps to be added to the queue.
+Quite easy to implement ⭐
