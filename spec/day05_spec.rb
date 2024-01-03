@@ -90,4 +90,57 @@ describe Day05 do
       expect(Day05.to_location_number(13, map)).to eq(35)
     end
   end
+
+  describe ".translate_range" do
+    it "does a simple translation" do
+      before = [[79, 93]]
+      after = [[81, 95]]
+      map = [{:from=>98, :to=>99, :offset=>-48}, {:from=>50, :to=>97, :offset=>2}]
+      expect(Day05.translate_range(before, map)).to eq(after)
+    end
+
+    it "does a single overlap translation" do
+      before = [[79, 105]]
+      after = [[50, 51], [81, 99], [100, 105]]
+      map = [{:from=>98, :to=>99, :offset=>-48}, {:from=>50, :to=>97, :offset=>2}]
+      expect(Day05.translate_range(before, map)).to eq(after)
+    end
+  end
+
+  describe ".range_intersection" do
+    it "returns the intersection of two ranges" do
+      range1 = [1, 5]
+      range2 = [3, 7]
+      range3 = [6, 8]
+      expect(Day05.range_intersection(range1, range2)).to eq([3, 5])
+      expect(Day05.range_intersection(range2, range3)).to eq([6, 7])
+      expect(Day05.range_intersection(range1, range1)).to eq([1, 5])
+      expect(Day05.range_intersection(range1, range3)).to eq(nil)
+    end
+  end
+
+  describe ".range_symmetric_difference" do
+    it "returns the symmetric difference of two ranges" do
+      range1 = [1, 5]
+      range2 = [3, 7]
+      range3 = [6, 8]
+      expect(Day05.range_symmetric_difference(range1, range2)).to eq([[1, 2], [6, 7]])
+      expect(Day05.range_symmetric_difference(range1, range3)).to eq([[1, 5], [6, 8]])
+      expect(Day05.range_symmetric_difference(range2, range3)).to eq([[3, 5], [8, 8]])
+    end
+  end
+
+  describe ".range_difference" do
+    it "returns the difference of two ranges" do
+      range1 = [1, 5]
+      range2 = [3, 7]
+      range3 = [6, 8]
+      range4 = [0, 10]
+      expect(Day05.range_difference(range1, range2)).to eq([[1, 2]])
+      expect(Day05.range_difference(range1, range3)).to eq([[1, 5]])
+      expect(Day05.range_difference(range2, range3)).to eq([[3, 5]])
+      expect(Day05.range_difference(range3, range2)).to eq([[8, 8]])
+      expect(Day05.range_difference(range4, range2)).to eq([[0, 2], [8, 10]])
+    end
+  end
 end
